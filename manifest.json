@@ -1,0 +1,12 @@
+{
+	"name": "Frape Protection by Snapshot Media",
+	"version": "0.1",
+	"description": "Enter a quick 4 digit pin before posting a status update.",
+	"background_page" : "background.html",
+	"permissions": ["http://*/*"],
+	"content_scripts": [{
+		"matches": ["http://www.facebook.com/*"],
+		"js": ["jquery.js", "frapeprotection.js"]
+		}
+	]
+}
