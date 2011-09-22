@@ -1,8 +1,8 @@
 $(document).ready(function(){
 	
-	var frape_proection_pin = localStorage.getItem("frape_proection_pin");
+	var frape_pin = localStorage.getItem("frape_pin");
 	
-	if(frape_proection_pin == null) {
+	if(frape_pin == null) {
 		console.log('Set a pin');
 		var pin = '';
 		var pin_2 = ' ';
@@ -12,15 +12,17 @@ $(document).ready(function(){
 			var pin_2 = prompt('Please enter the same pin again.');		
 		}
 		
-		localStorage.setItem("frape_proection_pin");
+		localStorage.setItem("frape_pin", pin);
+		
+		frape_pin = pin;
 	}
 	
 	$('#profile_stream_composer input[value=Post]').live('click', function() {
 		var pin = prompt('Please enter your 4 digit pin:');
-		if(pin != frape_proection_pin) {
+		if(pin != frape_pin) {
 			alert('Sorry, wrong pin. Please try again.');
 		}
-		return (pin == frape_proection_pin);
+		return (pin == frape_pin);
 	})
 	
 })
